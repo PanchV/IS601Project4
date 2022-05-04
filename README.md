@@ -1,4 +1,3 @@
-Testing New Branches
 # Project Setup
 
 [![Production Workflow](https://github.com/PanchV/IS601Project4/actions/workflows/prod.yml/badge.svg)](https://github.com/PanchV/IS601Project4/actions/workflows/prod.yml)

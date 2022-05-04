@@ -1,0 +1,96 @@
+from flask import Blueprint, render_template, request, redirect, url_for, flash
+from app.auth.decorators import admin_required
+from flask_login import login_user, login_required, logout_user, current_user
+from sqlalchemy import func
+from sqlalchemy.orm import load_only
+from werkzeug.security import generate_password_hash
+
+from app.auth.forms import login_form, register_form, profile_form, security_form, user_edit_form
+from app.db import db
+from app.db.models import
+
+auth = Blueprint('auth', __name__, template_folder='templates')
+
+@auth.route('/login', methods=['POST', 'GET'])
+def login():
+    form = login_form()
+    if current_user.is_authenticated:
+        return redirect(url_for('auth.dashboard'))
+    if form.validate_on_submit():
+        user = User.query.filter_by(email=form.email.data).first()
+        if user is None or not user.check_password(form.password.data):
+            flash('Invalid username or password')
+            return redirect(url_for('auth.login'))
+        else:
+            user.authenticated = True
+            db.session.add(user)
+            db.session.commit()
+            login_user(user)
+            flash("Welcome", 'success')
+            current_app.logger.info("Existing User" + user.email + "Logged In")
+            return redirect(url_for('auth.dashboard'))
+    return render_template('login.html', form=form)
+
+
+
+@auth.route('/register', methods=['POST', 'GET'])
+def register():
+    if current_user.is_authenticated:
+        return redirect(url_for('auth.dashboard'))
+    form = register_form()
+    if form.validate_on_submit():
+        user = User.query.filter_by(email=form.email.data).first()
+        if user is None:
+            user = User(email=form.email.data, password=generate_password_hash(form.password.data))
+            db.session.add(user)
+            db.session.commit()
+            if user.id == 1:
+                user.is_admin = 1
+                db.session.add(user)
+                db.session.commit()
+            flash('Congratulations, you are now a registered user!', "success")
+            current_app.logger.info("New User" + user.email + "registered")
+            return redirect(url_for('auth.login'), 302)
+        else:
+            flash('Already Registered')
+            return redirect(url_for('auth.login'), 302)
+    return render_template('register.html', form=form)
+
+
+@auth.route("/logout")
+@login_required
+def logout():
+    """Logout the current user."""
+    user = current_user
+    user.authenticated = False
+    db.session.add(user)
+    db.session.commit()
+    logout_user()
+    flash("You are now logged out", 'success')
+    return redirect(url_for('auth.login'))
+
+
+
+@auth.route('/dashboard', methods=['GET'])
+@login_required
+def dashboard():
+    """ render user's dashboard page """
+    user_id = current_user.get_id()
+
+    data = Transaction.query.filter_by(user_id=user_id).all()
+
+    result = db.session.query(func.sum(Transaction.amount)) \
+        .filter(Transaction.user_id == user_id) \
+        .group_by(Transaction.transaction_type).all()
+
+    if result:
+        balance = result[0][0] + result[1][0]
+    else:
+        balance = 0
+
+    try:
+        return render_template('dashboard.j2.html', data=data, balance=balance)
+    except TemplateNotFound:
+        abort(404)
+
+
