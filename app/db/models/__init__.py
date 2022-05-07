@@ -1,9 +1,10 @@
 from datetime import datetime
-
 from werkzeug.security import check_password_hash, generate_password_hash
 from app.db import db
 from flask_login import UserMixin
-
+import enum
+from sqlalchemy.types import Enum
+from sqlalchemy.orm import relationship
 
 class User(UserMixin, db.Model):
     __tablename__ = 'users'
@@ -16,9 +17,9 @@ class User(UserMixin, db.Model):
     registered_on = db.Column('registered_on', db.DateTime)
     active = db.Column('is_active', db.Boolean(), nullable=False, server_default='1')
     is_admin = db.Column('is_admin', db.Boolean(), nullable=False, server_default='0')
-
     # `roles` and `groups` are reserved words that *must* be defined
     # on the `User` model to use group- or role-based authorization.
+    transactions = db.relationship("Transaction", back_populates="user", cascade="all, delete")
 
     def __init__(self, email, password):
         self.email = email
