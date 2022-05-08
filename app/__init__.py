@@ -1,29 +1,92 @@
-"""A simple flask web app"""
 import os
+import flask
 from flask import Flask
+from flask import render_template
+from flask_bootstrap import Bootstrap5 # pylint: disable=no-name-in-module
+from flask_cors import CORS
+import flask_login
+from flask_wtf.csrf import CSRFProtect
+from app.auth import auth
 from app.cli import create_database
-from app.db import db
+from app.db import database, db
 from app.db.models import User
+from app.simple_pages import simple_pages
+from app.transactions import transactions
+from app.util.logger_config import log_conf
+from app.util.context_processor import utility_context_processor
 
-#testline
+login_manager = flask_login.LoginManager()
+
+
 def page_not_found(e):
-    return render_template("404.html"), 404
+    """ handle 404 """
+    # pylint: disable=invalid-name
+    # TODO log e when logging implemented
+    return render_template("404.j2.html"), 404
+
 
 def create_app():
     """Create and configure an instance of the Flask application."""
     app = Flask(__name__)
-    app.secret_key = 'This is an INSECURE secret!! DO NOT use this in production!!'
 
+    # https://pythonhosted.org/Flask-WTF/csrf.html
+    CSRFProtect(app)
+
+    #----------------------------------------
+    # basic config
+    #
+    if  os.environ.get("FLASK_ENV") == "production":
+        app.config.from_object("app.config.ProductionConfig")
+    elif os.environ.get("FLASK_ENV") == "development":
+        app.config.from_object("app.config.DevelopmentConfig")
+    elif os.environ.get("FLASK_ENV") == "testing":
+        app.config.from_object("app.config.TestingConfig")
+
+    app.context_processor(utility_context_processor)
+    app.register_blueprint(log_conf)
+
+    #----------------------------------------
+    # web stuff
+    #
+
+    # https://flask-login.readthedocs.io/en/latest/  <-login manager
+    login_manager.init_app(app)
+    login_manager.login_view = "auth.login"
+
+    # Needed for CSRF protection of form submissions and WTF Forms
+    # https://wtforms.readthedocs.io/en/3.0.x/
+
+
+    # setup models/database
+    app.register_blueprint(database)
+
+    # load routes/webpages
+    bootstrap = Bootstrap5(app) # pylint: disable=unused-variable
     app.register_error_handler(404, page_not_found)
-    db_dir = "database/db.sqlite"
-    app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///" + os.path.abspath(db_dir)
-    app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+    app.register_blueprint(simple_pages)
+    app.register_blueprint(auth)
+    app.register_blueprint(transactions)
+
+
     db.init_app(app)
+    api_v1_cors_config = {
+        "methods": ["OPTIONS", "GET", "POST"],
+    }
+    CORS(app, resources={"/api/*": api_v1_cors_config})
+
+    #----------------------------------------
     # add command function to cli commands
+    #
     app.cli.add_command(create_database)
 
-    @app.route('/')
-    def hello():
-        return 'Hello, World!'
-
     return app
+
+
+@login_manager.user_loader
+def user_loader(user_id):
+    """  callback function """
+
+    try:
+        return User.query.get(int(user_id))
+    except: # pylint: disable=bare-except
+        return None
