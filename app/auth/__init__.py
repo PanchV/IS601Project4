@@ -89,7 +89,7 @@ def dashboard():
         balance = 0
 
     try:
-        return render_template('dashboard.j2.html', data=data, balance=balance)
+        return render_template('dashboard.html', data=data, balance=balance)
     except TemplateNotFound:
         abort(404)
 
