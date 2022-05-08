@@ -46,3 +46,35 @@ class User(UserMixin, db.Model):
 
     def __repr__(self):
         return '<User %r>' % self.email
+
+@enum.unique
+class TransactionType(enum.Enum):
+    """ Enum for column """
+    CREDIT = 'CREDIT'
+    DEBIT = 'DEBIT'
+
+
+class Transaction(db.Model):
+    """ Account Transaction Database """
+    # pylint: disable=no-member
+    __tablename__ = 'transactions'
+
+    id = db.Column(db.Integer, primary_key=True)
+    amount = db.Column(db.Numeric(10, 2), nullable=False, default=0)
+    description = db.Column(db.String(300), nullable=True, unique=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    transaction_type = db.Column(Enum(TransactionType), nullable=True, unique=False)
+
+    user = relationship("User", back_populates="transactions", uselist=False)
+
+    def __init__(self, amount, transaction_type):
+        self.amount = amount
+        self.transaction_type = transaction_type
+
+    @staticmethod
+    def csv_headers():
+        """ returns tuple of CSV header """
+        transaction_types = ( 'AMOUNT', 'TYPE' )
+        return transaction_types
+
+
