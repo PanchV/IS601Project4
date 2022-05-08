@@ -1,0 +1,12 @@
+{
+    "cSpell.words": [
+        "akhileshns",
+        "pylint",
+        "pytest",
+        "runtest",
+        "usedocker",
+        "werkzeug"
+    ],
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true
+}
