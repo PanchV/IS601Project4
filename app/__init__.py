@@ -12,8 +12,8 @@ from app.db import database, db
 from app.db.models import User
 from app.simple_pages import simple_pages
 from app.transactions import transactions
-from app.util.logger_config import log_conf
-from app.util.context_processor import utility_context_processor
+from app.logger_config import log_conf
+from app.context_processor import utility_context_processor
 
 login_manager = flask_login.LoginManager()
 
@@ -22,7 +22,7 @@ def page_not_found(e):
     """ handle 404 """
     # pylint: disable=invalid-name
     # TODO log e when logging implemented
-    return render_template("404.j2.html"), 404
+    return render_template("404.html"), 404
 
 
 def create_app():

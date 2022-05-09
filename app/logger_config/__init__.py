@@ -39,7 +39,7 @@ def setup_logs():
         os.mkdir(logdir)
 
     # configure logger with JSON file
-    logging.config.dictConfig(logging_config)
+    #logging.config.dictConfig(logging_config)
 
     # log to logfile misc_debug.log
     log = logging.getLogger("misc_debug")
