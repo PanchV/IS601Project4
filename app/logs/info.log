@@ -462,3 +462,5 @@ INFO in __init__: this is the plain message
 INFO in __init__: this is the plain message
 [2022-05-09 18:03:36,881] 172.22.0.1 requested http://localhost/
 INFO in __init__: this is the plain message
+[2022-05-09 18:20:59,963] 172.22.0.1 requested http://localhost/
+INFO in __init__: this is the plain message
