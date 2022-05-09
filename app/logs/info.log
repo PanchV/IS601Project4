@@ -76,3 +76,19 @@ INFO in __init__: this is the plain message
 INFO in __init__: this is the plain message
 [2022-05-09 13:58:35,885] 172.22.0.1 requested http://localhost/login
 INFO in __init__: this is the plain message
+[2022-05-09 14:00:25,585] 172.22.0.1 requested http://localhost/dashboard
+INFO in __init__: this is the plain message
+[2022-05-09 14:00:28,218] 172.22.0.1 requested http://localhost/dashboard
+INFO in __init__: this is the plain message
+[2022-05-09 14:00:29,255] 172.22.0.1 requested http://localhost/users
+INFO in __init__: Browse page loading
+[2022-05-09 14:00:29,315] 172.22.0.1 requested http://localhost/users
+INFO in __init__: this is the plain message
+[2022-05-09 14:00:31,580] 172.22.0.1 requested http://localhost/about
+INFO in __init__: this is the plain message
+[2022-05-09 14:00:32,596] 172.22.0.1 requested http://localhost/about
+INFO in __init__: this is the plain message
+[2022-05-09 14:00:35,609] 172.22.0.1 requested http://localhost/transactions/1
+INFO in __init__: this is the plain message
+[2022-05-09 14:01:27,379] 172.22.0.1 requested http://localhost/transactions/1
+INFO in __init__: this is the plain message
