@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="row mt-5">
+         <div class="border border-1 border-dark mx-auto p-4">
+             <h2>User profile</h2>
+                <td><img src="{{ user.avatar(128) }}"></td><br>
+                <pre>User Email: {{ user.email }}</pre>
+                <pre>About: {{ user.about }}</pre>
+                <pre>Hobbies: {{ user.hobbies }}</pre>
+                <pre>Education: {{ user.education }}</pre>
+                <pre>Skills: {{ user.skills }}</pre>
+         </div>
+    </div>
+
+{% endblock %}
