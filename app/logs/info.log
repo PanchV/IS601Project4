@@ -168,3 +168,125 @@ INFO in __init__: this is the plain message
 INFO in __init__: this is the plain message
 [2022-05-09 14:42:25,121] 172.22.0.1 requested http://localhost/about
 INFO in __init__: this is the plain message
+[2022-05-09 14:54:45,288] 172.22.0.1 requested http://localhost/about
+INFO in __init__: this is the plain message
+[2022-05-09 14:55:18,403] 172.22.0.1 requested http://localhost/welcome
+INFO in __init__: this is the plain message
+[2022-05-09 14:55:19,150] 172.22.0.1 requested http://localhost/about
+INFO in __init__: this is the plain message
+[2022-05-09 14:55:19,731] 172.22.0.1 requested http://localhost/about
+INFO in __init__: this is the plain message
+[2022-05-09 14:55:20,560] 172.22.0.1 requested http://localhost/welcome
+INFO in __init__: this is the plain message
+[2022-05-09 14:55:21,186] 172.22.0.1 requested http://localhost/about
+INFO in __init__: this is the plain message
+[2022-05-09 14:55:21,741] 172.22.0.1 requested http://localhost/about
+INFO in __init__: this is the plain message
+[2022-05-09 14:55:22,921] 172.22.0.1 requested http://localhost/about
+INFO in __init__: this is the plain message
+[2022-05-09 14:55:23,540] 172.22.0.1 requested http://localhost/welcome
+INFO in __init__: this is the plain message
+[2022-05-09 14:55:24,059] 172.22.0.1 requested http://localhost/about
+INFO in __init__: this is the plain message
+[2022-05-09 14:55:25,872] 172.22.0.1 requested http://localhost/about
+INFO in __init__: this is the plain message
+[2022-05-09 14:56:00,097] 172.22.0.1 requested http://localhost/about
+INFO in __init__: this is the plain message
+[2022-05-09 14:56:01,477] 172.22.0.1 requested http://localhost/about
+INFO in __init__: this is the plain message
+[2022-05-09 14:56:02,175] 172.22.0.1 requested http://localhost/about
+INFO in __init__: this is the plain message
+[2022-05-09 14:56:02,645] 172.22.0.1 requested http://localhost/welcome
+INFO in __init__: this is the plain message
+[2022-05-09 14:56:07,874] 172.22.0.1 requested http://localhost/about
+INFO in __init__: this is the plain message
+[2022-05-09 14:56:08,504] 172.22.0.1 requested http://localhost/about
+INFO in __init__: this is the plain message
+[2022-05-09 14:56:09,003] 172.22.0.1 requested http://localhost/welcome
+INFO in __init__: this is the plain message
+[2022-05-09 14:56:09,540] 172.22.0.1 requested http://localhost/about
+INFO in __init__: this is the plain message
+[2022-05-09 14:57:00,258] 172.22.0.1 requested http://localhost/about
+INFO in __init__: this is the plain message
+[2022-05-09 14:57:02,564] 172.22.0.1 requested http://localhost/welcome
+INFO in __init__: this is the plain message
+[2022-05-09 14:58:57,056] 172.22.0.1 requested http://localhost/about
+INFO in __init__: this is the plain message
+[2022-05-09 14:58:57,836] 172.22.0.1 requested http://localhost/welcome
+INFO in __init__: this is the plain message
+[2022-05-09 15:00:37,885] 172.22.0.1 requested http://localhost/register
+INFO in __init__: this is the plain message
+[2022-05-09 15:12:39,591] 172.22.0.1 requested http://localhost/login
+INFO in __init__: this is the plain message
+[2022-05-09 15:12:41,236] 172.22.0.1 requested http://localhost/welcome
+INFO in __init__: this is the plain message
+[2022-05-09 15:12:41,935] 172.22.0.1 requested http://localhost/about
+INFO in __init__: this is the plain message
+[2022-05-09 15:15:10,016] 172.22.0.1 requested http://localhost/about
+INFO in __init__: this is the plain message
+[2022-05-09 15:15:14,455] 172.22.0.1 requested http://localhost/register
+INFO in __init__: this is the plain message
+[2022-05-09 15:15:15,347] 172.22.0.1 requested http://localhost/about
+INFO in __init__: this is the plain message
+[2022-05-09 15:15:16,055] 172.22.0.1 requested http://localhost/register
+INFO in __init__: this is the plain message
+[2022-05-09 15:15:17,639] 172.22.0.1 requested http://localhost/login
+INFO in __init__: this is the plain message
+[2022-05-09 15:15:27,119] 172.22.0.1 requested http://localhost/login
+INFO in __init__: this is the plain message
+[2022-05-09 15:20:07,516] 172.22.0.1 requested http://localhost/
+INFO in __init__: this is the plain message
+[2022-05-09 15:20:09,475] 172.22.0.1 requested http://localhost/
+INFO in __init__: this is the plain message
+[2022-05-09 15:20:10,063] 172.22.0.1 requested http://localhost/about
+INFO in __init__: this is the plain message
+[2022-05-09 15:20:10,847] 172.22.0.1 requested http://localhost/welcome
+INFO in __init__: this is the plain message
+[2022-05-09 15:20:11,548] 172.22.0.1 requested http://localhost/
+INFO in __init__: this is the plain message
+[2022-05-09 15:20:33,319] 172.22.0.1 requested http://localhost/
+INFO in __init__: this is the plain message
+[2022-05-09 15:20:35,503] 172.22.0.1 requested http://localhost/
+INFO in __init__: this is the plain message
+[2022-05-09 15:21:13,597] 172.22.0.1 requested http://localhost/
+INFO in __init__: this is the plain message
+[2022-05-09 15:21:14,651] 172.22.0.1 requested http://localhost/
+INFO in __init__: this is the plain message
+[2022-05-09 15:21:15,699] 172.22.0.1 requested http://localhost/about
+INFO in __init__: this is the plain message
+[2022-05-09 15:21:16,833] 172.22.0.1 requested http://localhost/welcome
+INFO in __init__: this is the plain message
+[2022-05-09 15:21:18,241] 172.22.0.1 requested http://localhost/login
+INFO in __init__: this is the plain message
+[2022-05-09 15:21:18,968] 172.22.0.1 requested http://localhost/register
+INFO in __init__: this is the plain message
+[2022-05-09 15:21:19,877] 172.22.0.1 requested http://localhost/login
+INFO in __init__: this is the plain message
+[2022-05-09 15:21:21,226] 172.22.0.1 requested http://localhost/login
+INFO in __init__: this is the plain message
+[2022-05-09 15:21:21,246] 172.22.0.1 requested http://localhost/dashboard
+INFO in __init__: this is the plain message
+[2022-05-09 15:21:22,722] 172.22.0.1 requested http://localhost/users
+INFO in __init__: Browse page loading
+[2022-05-09 15:21:22,793] 172.22.0.1 requested http://localhost/users
+INFO in __init__: this is the plain message
+[2022-05-09 15:21:23,322] 172.22.0.1 requested http://localhost/about
+INFO in __init__: this is the plain message
+[2022-05-09 15:21:23,857] 172.22.0.1 requested http://localhost/welcome
+INFO in __init__: this is the plain message
+[2022-05-09 15:21:24,597] 172.22.0.1 requested http://localhost/dashboard
+INFO in __init__: this is the plain message
+[2022-05-09 15:21:46,616] 172.22.0.1 requested http://localhost/dashboard
+INFO in __init__: this is the plain message
+[2022-05-09 15:30:59,360] 172.22.0.1 requested http://localhost/transactions/1
+INFO in __init__: this is the plain message
+[2022-05-09 15:31:01,762] 172.22.0.1 requested http://localhost/account
+INFO in __init__: this is the plain message
+[2022-05-09 15:31:03,583] 172.22.0.1 requested http://localhost/transactions/1
+INFO in __init__: this is the plain message
+[2022-05-09 15:31:07,317] 172.22.0.1 requested http://localhost/about
+INFO in __init__: this is the plain message
+[2022-05-09 15:32:17,490] 172.22.0.1 requested http://localhost/account
+INFO in __init__: this is the plain message
+[2022-05-09 15:32:19,356] 172.22.0.1 requested http://localhost/transactions/1
+INFO in __init__: this is the plain message
