@@ -36,9 +36,6 @@ def transactions_upload():
 
     form = csv_upload()
     if form.validate_on_submit():
-        #log = logging.getLogger("myApp")
-        #log1 = logging.getLogger("uploadCsv")
-        #log1.info("UPLOADED A NEW FILE")
         filename = secure_filename(form.file.data.filename)
         filepath = os.path.join(config.Config.UPLOAD_FOLDER, filename)
         form.file.data.save(filepath)

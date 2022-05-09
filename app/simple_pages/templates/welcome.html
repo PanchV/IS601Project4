@@ -2,8 +2,20 @@
 {% block content %}
     <div class="row">
         <article class="col-12">
-            <h1>Welcome</h1>
-            {{ lipsum (n=5, html=True, min=20, max=100) }}
+            <br>
+    <div class="container">
+        <h1>Welcome</h1>
+                Welcome to Panch's Online Banking Database Application!
+                <br><br>
+
+                <div class="col col-3">
+
+                    <img src="{{ url_for('static', filename='images/Welcome-Banking.png') }}" width="1300" height="auto"
+                         class="img"
+                         alt="...">
+                </div>
+
+            </div>
         </article>
     </div>
 {% endblock %}

@@ -32,25 +32,14 @@ class register_form(FlaskForm):
 
 class profile_form(FlaskForm):
 
-    about = TextAreaField('About', [validators.length(min=6, max=300)],
-                          description="Please add information about yourself")
-    hobbies = TextAreaField('Hobbies', [validators.length(min=6, max=300)],
-                          description="Please add information about your hobbies")
-    education = TextAreaField('Education', [validators.length(min=6, max=300)],
-                          description="Please add information about your education")
-    skills = TextAreaField('Skills', [validators.length(min=6, max=300)],
-                          description="Please add information about your skills")
+    about = TextAreaField('My Banking Habits:', [validators.length(min=6, max=300)],
+                          description="Tell us a little bit about your banking habits and how you tend to spend money.")
     submit = SubmitField()
 
 class user_edit_form(FlaskForm):
     about = TextAreaField('About', [validators.length(min=0, max=300)],
                           description="You may edit About information the user as an Admin")
-    hobbies = TextAreaField('Hobbies', [validators.length(min=0, max=300)],
-                            description="You may edit Hobbies information the user as an Admin")
-    education = TextAreaField('Education', [validators.length(min=0, max=300)],
-                              description="You may edit Education information the user as an Admin")
-    skills = TextAreaField('Skills', [validators.length(min=0, max=300)],
-                           description="You may edit Skills information the user as an Admin")
+
     is_admin = BooleanField('Admin', render_kw={'value':'1'})
     submit = SubmitField()
 
@@ -59,14 +48,14 @@ class security_form(FlaskForm):
     email = EmailField('Email Address', [
         validators.DataRequired(),
 
-    ], description="You can change your email address")
+    ], description="Edit your email address here")
 
     password = PasswordField('Create Password', [
         validators.DataRequired(),
         validators.EqualTo('confirm', message='Passwords must match'),
 
-    ], description="Create a password ")
-    confirm = PasswordField('Repeat Password', description="Please retype your password to confirm it is correct")
+    ], description="Edit your password here")
+    confirm = PasswordField('Re-type Password', description="Re-type your password to confirm. PASSWORDS MUST MATCH.")
 
     submit = SubmitField()
 

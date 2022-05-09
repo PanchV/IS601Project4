@@ -101,16 +101,14 @@ def edit_profile():
     form = profile_form(obj=updated_user)
     if form.validate_on_submit():
         updated_user.about = request.form.get('about')
-        updated_user.hobbies = request.form.get('hobbies')
-        updated_user.education = request.form.get('education')
-        updated_user.skills = request.form.get('skills')
+        #updated_user.hobbies = request.form.get('hobbies')
+        #updated_user.education = request.form.get('education')
+        #updated_user.skills = request.form.get('skills')
         db.session.add(updated_user)
         db.session.commit()
         flash('You Successfully Updated Your Profile', 'success')
         return redirect(url_for('auth.dashboard'))
     return render_template('profile_edit.html', form=form)
-
-
 
 
 
