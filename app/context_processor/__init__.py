@@ -9,6 +9,9 @@ def utility_context_processor():
         """ implement deployment_environment """
         return getenv('FLASK_ENV', None)
 
+    def format_price(amount, currency="$"):
+        return f"{currency}{amount:.2f}"
+
     def current_year():
         now = datetime.now()
         date = now.date()
