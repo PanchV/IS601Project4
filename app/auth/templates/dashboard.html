@@ -3,6 +3,12 @@
     {% from 'bootstrap5/form.html' import render_form, render_field, render_form_row %}
     <div id="row">
     <h2>Dashboard</h2>
-    <p>Welcome: {{ current_user.email }}</p>
+    <p>Welcome, {{ current_user.email }}!</p>
+    <br>
+    To begin using the app, simply navigate to the 'My Account' dropdown menu, and click on 'Transactions',
+        click on the blue 'Upload Transactions' button, and then upload a CSV file with your bank transactions.
+        with the following columns: [Name],
+        [Artist], [Genre], [Year]. It should look like it does here: <br><br>
+
     </div>
 {% endblock %}

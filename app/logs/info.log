@@ -516,3 +516,9 @@ INFO in __init__: this is the plain message
 INFO in __init__: this is the plain message
 [2022-05-09 19:06:41,030] 172.22.0.1 requested http://localhost/dashboard
 INFO in __init__: this is the plain message
+[2022-05-09 19:10:58,455] 172.22.0.1 requested http://localhost/dashboard
+INFO in __init__: this is the plain message
+[2022-05-09 19:11:06,313] 172.22.0.1 requested http://localhost/dashboard
+INFO in __init__: this is the plain message
+[2022-05-09 19:17:09,101] 172.22.0.1 requested http://localhost/transactions/1
+INFO in __init__: this is the plain message
