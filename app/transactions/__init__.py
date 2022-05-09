@@ -11,12 +11,12 @@ from app.db import db
 from app.db.models import Transaction
 from app.transactions.forms import csv_upload
 from werkzeug.utils import secure_filename, redirect
-from calculator import Calculator
+from compute_transactions import compute_transactions
 
 transactions = Blueprint('transactions', __name__,
                         template_folder='templates')
 
-calc_obj = Calculator()
+calc_obj = compute_transactions()
 
 @transactions.route('/transactions/<int:page>', methods=['GET'], defaults={"page": 1})
 @login_required
