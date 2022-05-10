@@ -50,7 +50,7 @@ class security_form(FlaskForm):
 
     ], description="Edit your email address here")
 
-    password = PasswordField('Create Password', [
+    password = PasswordField('Create a New Password', [
         validators.DataRequired(),
         validators.EqualTo('confirm', message='Passwords must match'),
 

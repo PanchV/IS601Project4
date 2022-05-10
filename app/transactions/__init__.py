@@ -1,11 +1,8 @@
 import csv
 import os
-
-
 from flask import Blueprint, render_template, abort, url_for, flash
 from flask_login import current_user, login_required
 from jinja2 import TemplateNotFound
-
 from app import config
 from app.db import db
 from app.db.models import Transaction
@@ -43,13 +40,13 @@ def transactions_upload():
         with open(filepath) as file:
             csv_file = csv.DictReader(file)
             for row in csv_file:
-                balance = calc_obj.add(int(row["\ufeffAMOUNT"]))
-                transaction_list.append(Transaction(row["\ufeffAMOUNT"],row['TYPE'], balance))
+                balance = calc_obj.add(int(row["AMOUNT"]))
+                transaction_list.append(Transaction(row["AMOUNT"],row['TYPE'], balance))
 
 
         current_user.transactions = transaction_list
         db.session.commit()
-        flash('You Uploaded Transactions Successfully!', 'success')
+        flash('Transactions Uploaded Successfully!', 'success')
         return redirect(url_for('transactions.transactions_browse'))
 
     try:

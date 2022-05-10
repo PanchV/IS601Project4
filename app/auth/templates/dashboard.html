@@ -6,9 +6,9 @@
     <p>Welcome, {{ current_user.email }}!</p>
     <br>
     To begin using the app, simply navigate to the 'My Account' dropdown menu, and click on 'Transactions',
-        click on the blue 'Upload Transactions' button, and then upload a CSV file with your bank transactions.
-        with the following columns: [Name],
-        [Artist], [Genre], [Year]. It should look like it does here: <br><br>
+        click on the blue 'Upload Transactions' button, and then upload a CSV file with your bank transactions
+        with the following columns: [Amount] and [Type]. The 'Amount' column should only contain a positive or negative
+        numerical value and the 'Type' column should only contain 'Debit' or 'Credit'. <br><br>
 
     </div>
 {% endblock %}
