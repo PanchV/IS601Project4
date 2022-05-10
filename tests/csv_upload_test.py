@@ -1,4 +1,10 @@
-def _upload_songs_test(application, add_db_user_fixture):
+import os
+import pytest
+from app.db import db
+from app import create_app
+
+#11
+def _upload_transactions_test(application, add_db_user_fixture):
     root = config.Config.BASE_DIR
     filename = 'transactions.csv'
     filepath = root + '/../tests/' + filename
@@ -12,8 +18,8 @@ def _upload_songs_test(application, add_db_user_fixture):
     assert os.path.exists(upload_file)
     os.remove(upload_file)
 
-
-def _upload_songs_deny_test(client):
+#12
+def _upload_transactions_deny_test(client):
     resp = client.get('transactions/upload', follow_redirects=True)
     assert b'Login Failed' in resp.data
     root = config.Config.BASE_DIR

@@ -1,6 +1,7 @@
 from app.db.models import User
 from app import db
 
+#18
 def _login_test(client, add_db_user_fixture):
 
     resp = client.post('login', follow_redirects=True,

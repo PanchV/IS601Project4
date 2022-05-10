@@ -1,6 +1,7 @@
 from app.db.models import User
 from app import db
 
+#13
 def _test_dashboard(application, add_db_user_fixture):
     user = add_db_user_fixture
 
@@ -10,7 +11,7 @@ def _test_dashboard(application, add_db_user_fixture):
     assert resp.status_code == 200
     assert b'Dashboard' in resp.data
 
-
+#14
 def _test_dashboard_deny(client):
 
     resp = client.get('dashboard', follow_redirects=True)

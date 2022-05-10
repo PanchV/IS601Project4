@@ -4,7 +4,7 @@ from click.testing import CliRunner
 
 runner = CliRunner()
 
-
+#6
 def _test_create_log_folder():
     response = runner.invoke(create_log_folder)
     assert response.exit_code == 0
@@ -13,7 +13,7 @@ def _test_create_log_folder():
     logdir = os.path.join(root, '../logs')
     # make a directory if it doesn't exist
     assert os.path.exists(logdir) == True
-
+#7
 def _test_create_database():
     response = runner.invoke(create_database)
     assert response.exit_code == 0

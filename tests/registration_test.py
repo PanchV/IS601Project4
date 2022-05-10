@@ -2,6 +2,7 @@
 from app.db.models import User
 from app import db
 
+#21
 def _register_user_test(client):
     """ POST to /register """
     new_email = 'panchpandu11@gmail.com'

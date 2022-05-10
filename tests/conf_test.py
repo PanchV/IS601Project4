@@ -5,7 +5,7 @@ import pytest
 from app.db import db
 from app import create_app
 
-
+#8
 @pytest.fixture()
 def application():
     """This makes the app"""
@@ -15,13 +15,13 @@ def application():
     })
     yield application
 
-
+#9
 @pytest.fixture()
 def client(application):
     """This makes the http client"""
     return application.test_client()
 
-
+#10
 @pytest.fixture()
 def runner(application):
     """This makes the task runner"""
